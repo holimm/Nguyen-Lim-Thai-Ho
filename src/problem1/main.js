@@ -5,6 +5,8 @@
  Output: `return` - summation to `n`, i.e. `sum_to_n(5) === 1 + 2 + 3 + 4 + 5 === 15`.
 */
 
+//All functions will check if n is negative then sum to n accordingly
+
 // @param n: any integer
 // @return summation of n
 var sum_to_n_a = function (n) {
