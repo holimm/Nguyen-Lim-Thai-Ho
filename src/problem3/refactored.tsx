@@ -10,7 +10,7 @@ interface FormattedWalletBalance extends WalletBalance {
   formatted: string; // currency and amount properties existed in WalletBalance, just need to extend
 }
 
-const WalletPage: React.FC<Props> = (props: BoxProps) => {
+const WalletPage: React.FC<BoxProps> = (props: BoxProps) => {
   const { ...rest } = props; // Removed unused `children` variable
   const balances = useWalletBalances();
   const prices = usePrices();
