@@ -1,6 +1,6 @@
 interface BlockChainType {
   blockchain: "Osmosis" | "Ethereum" | "Arbitrum" | "Zilliqa" | "Neo";
-} // Added missing blockchain type
+} // Added missing blockchain types
 
 interface WalletBalance extends BlockChainType {
   currency: string;
