@@ -26,7 +26,7 @@ const WalletPage: React.FC<BoxProps> = (props: BoxProps) => {
         return 30;
       case "Zilliqa":
       case "Neo":
-        return 20; // Combined cases with the same return value
+        return 20; // Combined cases with the same priority value
       default:
         return -99;
     }
@@ -36,9 +36,9 @@ const WalletPage: React.FC<BoxProps> = (props: BoxProps) => {
     return balances
       .filter(
         (balance: WalletBalance) =>
-          getPriority(balance.blockchain) > -99 && balance.amount > 0
+          getPriority(balance.blockchain) > -99 && balance.amount >= 0
         // Assumed lhsPriority was balancePriority as it wasn't found in the whole scope
-        // Optimize sorting logic, balance.amount was < 0 which might be incorrect logic
+        // Optimize filtering logic, balance.amount was <= 0 which might be incorrect logic
       )
       .sort((lhs: WalletBalance, rhs: WalletBalance) => {
         return getPriority(rhs.blockchain) - getPriority(lhs.blockchain); //Optimize sorting logic
