@@ -36,7 +36,9 @@ const WalletPage: React.FC<Props> = (props: BoxProps) => {
     return balances
       .filter(
         (balance: WalletBalance) =>
-          getPriority(balance.blockchain) > -99 && balance.amount > 0 // Optimize sorting logic, balance.amount was < 0 which might be incorrect logic
+          getPriority(balance.blockchain) > -99 && balance.amount > 0
+        // Assumed lhsPriority was balancePriority as it wasn't found in the whole scope
+        // Optimize sorting logic, balance.amount was < 0 which might be incorrect logic
       )
       .sort((lhs: WalletBalance, rhs: WalletBalance) => {
         return getPriority(rhs.blockchain) - getPriority(lhs.blockchain); //Optimize sorting logic
