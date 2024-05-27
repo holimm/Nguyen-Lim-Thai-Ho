@@ -1,5 +1,5 @@
 # Setup Guide
-- Install packages by execute the command `npm install --save --legacy-peer-deps`
+- Install packages by execute the command `npm install --legacy-peer-deps`
 - Start by execute the command `npm start`
 
 # Framework / Library
